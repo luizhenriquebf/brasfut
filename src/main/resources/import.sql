@@ -1,0 +1,5 @@
+INSERT INTO jogadores (nome, foto, posicao, idade, gols) VALUES ('David Luiz', 'https://static-wp-tor15-prd.torcedores.com/wp-content/uploads/2023/07/david-luiz-flamengo.jpg', 'zagueiro', 36, 1);
+INSERT INTO jogadores (nome, foto, posicao, idade, gols) VALUES ('Gabriel Barbosa A.K.A Gabigol', 'https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2023/06/GettyImages-1258363358-e1685671294409.jpg?w=876&h=484&crop=1', 'atacante', 26, 109);
+INSERT INTO jogadores (nome, foto, posicao, idade, gols) VALUES ('Giorgian De Arrascaeta', 'https://tntsports.com.br/__export/1659206053830/sites/esporteinterativo/img/2022/07/30/gettyimages-1408549397_1.jpg_554688468.jpg', 'meia', 29, 57);
+INSERT INTO jogadores (nome, foto, posicao, idade, gols) VALUES ('Cássio', 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/C%C3%A1ssio_2022.jpg/800px-C%C3%A1ssio_2022.jpg', 'goleiro', 36, 0);
+INSERT INTO jogadores (nome, foto, posicao, idade, gols) VALUES ('Adriano A.K.A Imperador', 'https://tntsports.com.br/__export/1650992048381/sites/esporteinterativo/img/2022/04/26/adriano_comemorando_pela_inter_1.jpg_554688468.jpg', 'atacante', 41, 78);
