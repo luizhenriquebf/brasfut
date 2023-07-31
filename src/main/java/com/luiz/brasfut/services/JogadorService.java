@@ -16,14 +16,25 @@ public class JogadorService {
 	@Autowired
 	JogadorRepository jogadorRepository;
 	
-	public JogadorDTO findById(Long id) {
+	@Transactional(readOnly = true)
+	public JogadorDTO findByIdDTO(Long id) {
 		return new JogadorDTO(jogadorRepository.findById(id).get());
 	}
 	
 	@Transactional(readOnly = true)
-	public List<JogadorDTO> findAll() {
+	public Jogador findById(Long id) {
+		return jogadorRepository.findById(id).get();
+	}
+	
+	@Transactional(readOnly = true)
+	public List<JogadorDTO> findAllDTO() {
 		List<Jogador> resultado = jogadorRepository.findAll();
 		return resultado.stream().map(x -> new JogadorDTO(x)).toList();
+	}
+	
+	@Transactional(readOnly = true)
+	public List<Jogador> findAll() {
+		return jogadorRepository.findAll();
 	}
 	
 }

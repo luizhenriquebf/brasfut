@@ -7,6 +7,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -17,7 +19,7 @@ public class Jogador {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(nullable = false)
+	@Column(nullable = false, unique = true)
 	private String nome;
 	@Column(columnDefinition = "TEXT")
 	private String foto;
@@ -25,16 +27,21 @@ public class Jogador {
 	private Integer idade;
 	private Integer gols;
 	
+	@ManyToOne
+	@JoinColumn(name = "clube_id")
+	private Clube clube;
+	
 	@Deprecated
 	public Jogador() {}
 
-	public Jogador(Long id, String nome,String foto, String posicao, Integer idade, Integer gols) {
+	public Jogador(Long id, String nome,String foto, String posicao, Integer idade, Integer gols, Clube clube) {
 		this.id = id;
 		this.nome = nome;
 		this.foto = foto;
 		this.posicao = posicao;
 		this.idade = idade;
 		this.gols = gols;
+		this.clube = clube;
 	}
 
 	public Long getId() {
@@ -83,6 +90,14 @@ public class Jogador {
 
 	public void setGols(Integer gols) {
 		this.gols = gols;
+	}
+
+	public Clube getClube() {
+		return clube;
+	}
+
+	public void setClube(Clube clube) {
+		this.clube = clube;
 	}
 
 	@Override
