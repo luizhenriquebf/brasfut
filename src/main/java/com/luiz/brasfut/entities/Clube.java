@@ -8,6 +8,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
@@ -26,6 +27,9 @@ public class Clube {
 	
 	@OneToMany(mappedBy = "clube")
 	private List<Jogador> jogadores;
+
+	@ManyToMany(mappedBy = "clubes")
+	private List<Campeonato> campeonatos; 
 	
 	@Deprecated
 	public Clube() {}
